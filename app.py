@@ -1,111 +1,86 @@
-# app.py
 import streamlit as st
 import pandas as pd
-import os
+from rapidfuzz import process, fuzz
+import datetime
 
 # -------------------------
-# Paths
+# File paths (relative to app.py)
 # -------------------------
-BASE_FOLDER = os.path.join(os.getcwd(), "Bank Data Export")  # Streamlit Cloud: use relative path
-EXCEL_FILE = os.path.join(BASE_FOLDER, "budget_export.xlsx")
-CATEGORY_FILE = os.path.join(BASE_FOLDER, "categories.xlsx")
+EXCEL_FILE = "budget_export.xlsx"
+CATEGORY_FILE = "categories.xlsx"
 
 # -------------------------
-# Page setup
-# -------------------------
-st.set_page_config(page_title="Budget Dashboard", layout="wide")
-st.title("💰 Budget Dashboard")
-
-# -------------------------
-# Load Data
+# Load Excel data
 # -------------------------
 @st.cache_data
 def load_data():
-    # Read Excel file
     df = pd.read_excel(EXCEL_FILE)
-    df.columns = [col.strip() for col in df.columns]  # clean column names
+    # Ensure Description exists
+    if 'Description' not in df.columns:
+        df['Description'] = "No Description"
+    else:
+        df['Description'] = df['Description'].fillna('No Description')
     return df
 
-df = load_data()
-
 # -------------------------
-# Load Categories
+# Load categories
 # -------------------------
 @st.cache_data
 def load_categories():
-    if os.path.exists(CATEGORY_FILE):
-        cat_df = pd.read_excel(CATEGORY_FILE, usecols=[0, 1], header=None)
-        cat_df.columns = ['Keyword', 'Category']
-        cat_df['Keyword'] = cat_df['Keyword'].astype(str).str.strip().str.lower()
-        cat_df['Category'] = cat_df['Category'].astype(str).str.strip()
-        return cat_df
+    if CATEGORY_FILE:
+        categories = pd.read_excel(CATEGORY_FILE, usecols=[0,1], header=None)
+        categories.columns = ['Keyword', 'Category']
+        categories['Keyword'] = categories['Keyword'].astype(str).str.strip().str.lower()
+        categories['Category'] = categories['Category'].astype(str).str.strip()
+        return categories
     else:
         return pd.DataFrame(columns=['Keyword', 'Category'])
 
-categories = load_categories()
-keywords = categories['Keyword'].tolist()
-
 # -------------------------
-# Categorization
+# Assign category
 # -------------------------
-def assign_category(description):
-    if pd.isna(description):
-        return "Uncategorized"
+def assign_category(description, categories_df):
+    keywords = categories_df['Keyword'].tolist()
     desc = str(description).strip().lower()
     for i, keyword in enumerate(keywords):
         if keyword in desc:
-            return categories.loc[i, 'Category']
+            return categories_df.loc[i, 'Category']
+    if keywords:
+        result = process.extractOne(desc, keywords, scorer=fuzz.partial_ratio)
+        if result:
+            match_keyword, score, idx = result
+            if score >= 75:
+                return categories_df.loc[idx, 'Category']
     return "Uncategorized"
 
-if 'Category' not in df.columns:
-    df['Category'] = df['Description'].apply(assign_category)
-
 # -------------------------
-# Sidebar Filters
+# Main Streamlit app
 # -------------------------
-st.sidebar.header("Filters")
-accounts = df['Account'].unique().tolist()
-selected_accounts = st.sidebar.multiselect("Account", accounts, default=accounts)
+st.title("📊 Interactive Budget Dashboard")
 
-categories_list = df['Category'].unique().tolist()
-selected_categories = st.sidebar.multiselect("Category", categories_list, default=categories_list)
+# Load data
+df = load_data()
+categories_df = load_categories()
 
-# Optional: Month filter
+# Apply categories
+df['Category'] = df['Description'].apply(lambda x: assign_category(x, categories_df))
+
+# Sidebar filter by month
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 df['Month'] = df['Date'].dt.to_period('M')
-months = df['Month'].dropna().astype(str).unique().tolist()
-selected_month = st.sidebar.selectbox("Month", ["All"] + months, index=0)
+months = df['Month'].dropna().unique()
+selected_month = st.sidebar.selectbox("Select Month", sorted(months))
 
-# -------------------------
-# Filter Data
-# -------------------------
-filtered = df[df['Account'].isin(selected_accounts) & df['Category'].isin(selected_categories)]
-if selected_month != "All":
-    filtered = filtered[filtered['Month'].astype(str) == selected_month]
+filtered_df = df[df['Month'] == selected_month]
 
-# -------------------------
-# Display
-# -------------------------
-st.subheader(f"Transactions ({len(filtered)})")
-st.dataframe(filtered)
+# Show budget table
+st.subheader(f"Transactions for {selected_month}")
+st.dataframe(filtered_df)
 
-# -------------------------
-# Monthly Budget Goals
-# -------------------------
-st.sidebar.header("Monthly Budget Goals")
-budget_goals = {}
-for month in months:
-    goal = st.sidebar.number_input(f"Budget for {month}", min_value=0, value=0)
-    budget_goals[month] = goal
+# Total spent for the month
+st.write(f"**Total Spent:** ${filtered_df['Amount'].sum():,.2f}")
 
-# Optional: show totals vs goal
-if selected_month != "All":
-    total_amount = filtered['Amount'].sum()
-    goal = budget_goals[selected_month]
-    st.metric(label=f"Month: {selected_month}", value=f"${total_amount:,.2f}", delta=f"${total_amount - goal:,.2f}")
-
-# -------------------------
-# Notes
-# -------------------------
-st.sidebar.markdown("You can update categories in `categories.xlsx` in your repo.")
-st.sidebar.markdown("Transactions come from `budget_export.xlsx` in your repo.")
+# Show breakdown by category
+category_totals = filtered_df.groupby('Category')['Amount'].sum().reset_index()
+st.subheader("Spending by Category")
+st.dataframe(category_totals)
