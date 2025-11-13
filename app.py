@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 # -------------------------
 # File paths
 # -------------------------
-EXCEL_FILE = "C:/Users/jjete/OneDrive/1. Life Stuff/Budget/Bank Data Export/Dashboard.xlsx"
+EXCEL_FILE = "Dashboard.xlsx"
 SHEET_NAME = "Quicklook"
 
 # -------------------------
