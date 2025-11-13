@@ -1,0 +1,442 @@
+2025-11-12 13:56:50.313461: Opening spreadsheet: Budget 2026
+2025-11-12 13:56:52.264764: Available sheets: ['NFCU', 'Chase', 'USAA']
+2025-11-12 13:56:56.042051: Loaded 26 rows from NFCU
+2025-11-12 13:56:56.492661: Loaded 43 rows from Chase
+2025-11-12 13:56:56.927853: Loaded 13 rows from USAA
+2025-11-12 13:56:56.937283: Total combined rows: 82
+2025-11-12 13:56:57.192689: Data successfully saved to: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\budget_export.xlsx
+2025-11-12 14:32:21.493862: Script started
+2025-11-12 14:32:21.513458: Opening spreadsheet: Budget 2026
+2025-11-12 14:32:23.979662: Loaded 26 rows from NFCU
+2025-11-12 14:32:24.319829: Loaded 43 rows from Chase
+2025-11-12 14:32:24.699330: Loaded 13 rows from USAA
+2025-11-12 14:32:24.701222: Total combined rows from sheets: 82
+2025-11-12 14:32:24.701530: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 14:32:24.711755: Script failed with error: cannot unpack non-iterable NoneType object
+2025-11-12 14:33:02.082992: Script started
+2025-11-12 14:33:02.084424: Opening spreadsheet: Budget 2026
+2025-11-12 14:33:03.806175: Loaded 26 rows from NFCU
+2025-11-12 14:33:04.235218: Loaded 43 rows from Chase
+2025-11-12 14:33:04.565998: Loaded 13 rows from USAA
+2025-11-12 14:33:04.575223: Total combined rows from sheets: 82
+2025-11-12 14:33:04.576621: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 14:33:04.585640: Script failed with error: cannot unpack non-iterable NoneType object
+2025-11-12 14:34:15.730091: Script started
+2025-11-12 14:34:15.731507: Opening spreadsheet: Budget 2026
+2025-11-12 14:34:18.277293: Loaded 26 rows from NFCU
+2025-11-12 14:34:18.809685: Loaded 43 rows from Chase
+2025-11-12 14:34:19.291230: Loaded 13 rows from USAA
+2025-11-12 14:34:19.299386: Total combined rows from sheets: 82
+2025-11-12 14:34:19.300631: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 14:34:20.832837: Appended 82 new rows to Excel.
+2025-11-12 14:34:20.833076: Script completed successfully.
+2025-11-12 14:37:20.201302: Script started
+2025-11-12 14:37:20.202678: Opening spreadsheet: Budget 2026
+2025-11-12 14:37:22.118201: Loaded 26 rows from NFCU
+2025-11-12 14:37:22.567357: Loaded 43 rows from Chase
+2025-11-12 14:37:22.983496: Loaded 13 rows from USAA
+2025-11-12 14:37:22.986616: Total combined rows from sheets: 82
+2025-11-12 14:37:22.987052: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 14:37:23.261463: Appended 72 new rows to Excel.
+2025-11-12 14:37:23.261674: Script completed successfully.
+2025-11-12 15:02:54.237930: Script started
+2025-11-12 15:02:54.239599: Opening spreadsheet: Budget 2026
+2025-11-12 15:02:56.493819: Loaded 26 rows from NFCU
+2025-11-12 15:02:56.930515: Loaded 43 rows from Chase
+2025-11-12 15:02:57.376075: Loaded 13 rows from USAA
+2025-11-12 15:02:57.377910: Total combined rows from sheets: 82
+2025-11-12 15:02:57.378179: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 15:02:57.666347: Appended 82 new rows to Excel.
+2025-11-12 15:02:57.666553: Script completed successfully.
+2025-11-12 15:03:08.466602: Script started
+2025-11-12 15:03:08.468014: Opening spreadsheet: Budget 2026
+2025-11-12 15:03:10.676383: Loaded 26 rows from NFCU
+2025-11-12 15:03:11.098123: Loaded 43 rows from Chase
+2025-11-12 15:03:11.540330: Loaded 13 rows from USAA
+2025-11-12 15:03:11.542153: Total combined rows from sheets: 82
+2025-11-12 15:03:11.542389: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 15:03:11.851439: Appended 72 new rows to Excel.
+2025-11-12 15:03:11.851647: Script completed successfully.
+2025-11-12 15:05:20.914811: Script started
+2025-11-12 15:05:29.852137: Opening spreadsheet: Budget 2026
+2025-11-12 15:05:31.549751: Loaded 26 rows from NFCU
+2025-11-12 15:05:31.883189: Loaded 43 rows from Chase
+2025-11-12 15:05:32.229473: Loaded 13 rows from USAA
+2025-11-12 15:05:32.231492: Total combined rows from sheets: 82
+2025-11-12 15:05:32.231751: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 15:05:32.566881: Appended 72 new rows to Excel.
+2025-11-12 15:05:32.567055: Script completed successfully.
+2025-11-12 15:05:35.356972: Script started
+2025-11-12 15:05:35.367316: Opening spreadsheet: Budget 2026
+2025-11-12 15:05:59.063297: Loaded 26 rows from NFCU
+2025-11-12 15:05:59.433906: Loaded 43 rows from Chase
+2025-11-12 15:05:59.812958: Loaded 13 rows from USAA
+2025-11-12 15:05:59.823026: Total combined rows from sheets: 82
+2025-11-12 15:05:59.825382: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 15:06:00.191053: Appended 72 new rows to Excel.
+2025-11-12 15:06:00.191688: Script completed successfully.
+2025-11-12 15:08:39.731952: Script started
+2025-11-12 15:08:39.733461: Opening spreadsheet: Budget 2026
+2025-11-12 15:08:41.362802: Loaded 26 rows from NFCU
+2025-11-12 15:08:41.689018: Loaded 43 rows from Chase
+2025-11-12 15:08:42.020638: Loaded 13 rows from USAA
+2025-11-12 15:08:42.023734: Total combined rows from sheets: 82
+2025-11-12 15:08:42.024619: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:08:42.029423: Category file not found: C:\Users\jjete\OneDrive\1. Life Stuff\Budget\Bank Data Export\categories.xlsx
+2025-11-12 15:08:42.031954: Columns before saving: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency', 'Notes', 'Tags']
+2025-11-12 15:08:42.408929: Appended 72 new rows to Excel.
+2025-11-12 15:08:42.409383: Script completed successfully.
+2025-11-12 15:11:55.998052: Script started
+2025-11-12 15:11:56.000069: Opening spreadsheet: Budget 2026
+2025-11-12 15:11:57.949737: Loaded 26 rows from NFCU
+2025-11-12 15:11:58.302589: Loaded 43 rows from Chase
+2025-11-12 15:11:58.640846: Loaded 13 rows from USAA
+2025-11-12 15:11:58.643090: Total combined rows from sheets: 82
+2025-11-12 15:11:58.643700: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:11:58.841653: Loaded 1827 category rules.
+2025-11-12 15:11:58.900634: Columns before saving: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency', 'Notes', 'Tags']
+2025-11-12 15:11:58.983721: Script failed with error: You are trying to merge on object and float64 columns for key 'Notes'. If you wish to proceed you should use pd.concat
+2025-11-12 15:13:43.207853: Script started
+2025-11-12 15:13:43.209643: Opening spreadsheet: Budget 2026
+2025-11-12 15:13:45.148156: Loaded 26 rows from NFCU
+2025-11-12 15:13:45.567044: Loaded 43 rows from Chase
+2025-11-12 15:13:45.945000: Loaded 13 rows from USAA
+2025-11-12 15:13:45.956064: Total combined rows from sheets: 82
+2025-11-12 15:13:45.957993: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:13:46.163188: Loaded 1827 category rules.
+2025-11-12 15:13:46.220984: Columns before saving: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency', 'Notes', 'Tags']
+2025-11-12 15:13:46.343617: Excel file updated. Total rows now: 92
+2025-11-12 15:13:46.344115: Script completed successfully.
+2025-11-12 15:15:46.506531: Script started
+2025-11-12 15:15:46.508336: Opening spreadsheet: Budget 2026
+2025-11-12 15:15:48.575145: Loaded 26 rows from NFCU
+2025-11-12 15:15:49.066396: Loaded 43 rows from Chase
+2025-11-12 15:15:49.473766: Loaded 13 rows from USAA
+2025-11-12 15:15:49.480294: Total combined rows from sheets: 82
+2025-11-12 15:15:49.481862: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:15:49.711675: Loaded 1827 category rules.
+2025-11-12 15:15:49.838757: Columns before saving: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Name', 'Category', 'Currency', 'Notes', 'Tags']
+2025-11-12 15:15:49.874722: Excel file updated with 92 total rows.
+2025-11-12 15:15:49.875012: Script completed successfully.
+2025-11-12 15:22:03.860155: Script started
+2025-11-12 15:22:03.861698: Opening spreadsheet: Budget 2026
+2025-11-12 15:22:06.203286: Loaded 26 rows from NFCU
+2025-11-12 15:22:06.647664: Loaded 43 rows from Chase
+2025-11-12 15:22:07.067666: Loaded 13 rows from USAA
+2025-11-12 15:22:07.076220: Total combined rows from sheets: 82
+2025-11-12 15:22:07.078093: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:22:07.424589: Loaded 1827 category rules.
+2025-11-12 15:22:07.425691: Script failed with error: [Errno 13] Permission denied: 'C:\\Users\\jjete\\OneDrive\\1. Life Stuff\\Budget\\Bank Data Export\\budget_export.xlsx'
+2025-11-12 15:23:00.098453: Script started
+2025-11-12 15:23:00.099931: Opening spreadsheet: Budget 2026
+2025-11-12 15:23:02.305071: Loaded 26 rows from NFCU
+2025-11-12 15:23:02.768184: Loaded 43 rows from Chase
+2025-11-12 15:23:03.234647: Loaded 13 rows from USAA
+2025-11-12 15:23:03.236577: Total combined rows from sheets: 82
+2025-11-12 15:23:03.236977: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:23:03.430582: Loaded 1827 category rules.
+2025-11-12 15:23:03.601019: Excel file updated with 115 total rows.
+2025-11-12 15:23:03.601672: Script completed successfully.
+2025-11-12 15:25:44.588940: Script started
+2025-11-12 15:25:44.590648: Opening spreadsheet: Budget 2026
+2025-11-12 15:25:46.402166: Loaded 26 rows from NFCU
+2025-11-12 15:25:46.756061: Loaded 43 rows from Chase
+2025-11-12 15:25:47.105566: Loaded 13 rows from USAA
+2025-11-12 15:25:47.107518: Total combined rows from sheets: 82
+2025-11-12 15:25:47.107926: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:25:47.147099: Loaded 1827 category rules.
+2025-11-12 15:25:47.248457: Script failed with error: "['Tags'] not found in axis"
+2025-11-12 15:27:15.464399: Script started
+2025-11-12 15:27:15.465875: Opening spreadsheet: Budget 2026
+2025-11-12 15:27:17.195893: Loaded 26 rows from NFCU
+2025-11-12 15:27:17.556307: Loaded 43 rows from Chase
+2025-11-12 15:27:17.939635: Loaded 13 rows from USAA
+2025-11-12 15:27:17.950683: Total combined rows from sheets: 82
+2025-11-12 15:27:17.952836: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:27:18.009974: Loaded 1827 category rules.
+2025-11-12 15:27:18.142855: Excel file updated with 85 total rows.
+2025-11-12 15:27:18.147921: Script failed with error: 'NaTType' object has no attribute 'start_time'
+2025-11-12 15:28:29.976281: Script started
+2025-11-12 15:28:29.977729: Opening spreadsheet: Budget 2026
+2025-11-12 15:28:32.229250: Loaded 26 rows from NFCU
+2025-11-12 15:28:32.568050: Loaded 43 rows from Chase
+2025-11-12 15:28:32.907622: Loaded 13 rows from USAA
+2025-11-12 15:28:32.918809: Total combined rows from sheets: 82
+2025-11-12 15:28:32.920864: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:28:32.989531: Loaded 1827 category rules.
+2025-11-12 15:28:33.122443: Excel file updated with 85 total rows.
+2025-11-12 15:28:33.135023: Weekly totals calculated
+2025-11-12 15:28:33.186039: Weekly Totals sheet created
+2025-11-12 15:28:33.186331: Script completed successfully.
+2025-11-12 15:34:53.221048: Script started
+2025-11-12 15:34:53.222699: Opening spreadsheet: Budget 2026
+2025-11-12 15:34:55.130913: Loaded 26 rows from NFCU
+2025-11-12 15:34:55.471094: Loaded 45 rows from Chase
+2025-11-12 15:34:55.785835: Loaded 13 rows from USAA
+2025-11-12 15:34:55.788239: Total combined rows from sheets: 84
+2025-11-12 15:34:55.788694: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:34:55.829187: Loaded 1827 category rules.
+2025-11-12 15:34:55.830600: Script failed with error: [Errno 13] Permission denied: 'C:\\Users\\jjete\\OneDrive\\1. Life Stuff\\Budget\\Bank Data Export\\budget_export.xlsx'
+2025-11-12 15:35:08.693524: Script started
+2025-11-12 15:35:08.695489: Opening spreadsheet: Budget 2026
+2025-11-12 15:35:10.233832: Loaded 26 rows from NFCU
+2025-11-12 15:35:10.577245: Loaded 45 rows from Chase
+2025-11-12 15:35:10.904846: Loaded 13 rows from USAA
+2025-11-12 15:35:10.914748: Total combined rows from sheets: 84
+2025-11-12 15:35:10.919059: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:35:11.053287: Loaded 1827 category rules.
+2025-11-12 15:35:11.220831: Excel file updated with 87 total rows.
+2025-11-12 15:35:11.234320: Weekly totals calculated
+2025-11-12 15:35:11.285639: Weekly Totals sheet created
+2025-11-12 15:35:11.286154: Script completed successfully.
+2025-11-12 15:38:12.808678: Script started
+2025-11-12 15:38:12.810319: Opening spreadsheet: Budget 2026
+2025-11-12 15:38:14.963303: Loaded 26 rows from NFCU
+2025-11-12 15:38:15.301498: Loaded 45 rows from Chase
+2025-11-12 15:38:15.648370: Loaded 13 rows from USAA
+2025-11-12 15:38:15.659324: Total combined rows from sheets: 84
+2025-11-12 15:38:15.661581: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:38:15.751644: Loaded 1827 category rules.
+2025-11-12 15:38:15.881765: Excel file updated with 87 total rows.
+2025-11-12 15:38:15.901354: Weekly totals calculated
+2025-11-12 15:38:15.947245: Weekly Totals sheet created
+2025-11-12 15:38:15.947659: Script completed successfully.
+2025-11-12 15:39:32.818559: Script started
+2025-11-12 15:39:32.820226: Opening spreadsheet: Budget 2026
+2025-11-12 15:39:34.802483: Loaded 26 rows from NFCU
+2025-11-12 15:39:35.143006: Loaded 45 rows from Chase
+2025-11-12 15:39:35.469742: Loaded 13 rows from USAA
+2025-11-12 15:39:35.471894: Total combined rows from sheets: 84
+2025-11-12 15:39:35.472348: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:39:35.511687: Loaded 1827 category rules.
+2025-11-12 15:39:35.690014: Excel file updated with 140 total rows.
+2025-11-12 15:39:35.706781: Weekly totals calculated
+2025-11-12 15:39:35.764655: Weekly Totals sheet created
+2025-11-12 15:39:35.765126: Script completed successfully.
+2025-11-12 15:41:27.705944: Script started
+2025-11-12 15:41:27.707612: Opening spreadsheet: Budget 2026
+2025-11-12 15:41:29.534658: Loaded 26 rows from NFCU
+2025-11-12 15:41:29.961134: Loaded 45 rows from Chase
+2025-11-12 15:41:30.516052: Loaded 13 rows from USAA
+2025-11-12 15:41:30.525553: Total combined rows from sheets: 84
+2025-11-12 15:41:30.527330: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:41:30.592268: Loaded 1827 category rules.
+2025-11-12 15:41:30.593496: Script failed with error: [Errno 13] Permission denied: 'C:\\Users\\jjete\\OneDrive\\1. Life Stuff\\Budget\\Bank Data Export\\budget_export.xlsx'
+2025-11-12 15:41:41.657551: Script started
+2025-11-12 15:41:41.659140: Opening spreadsheet: Budget 2026
+2025-11-12 15:41:43.381426: Loaded 26 rows from NFCU
+2025-11-12 15:41:43.752144: Loaded 45 rows from Chase
+2025-11-12 15:41:44.112413: Loaded 13 rows from USAA
+2025-11-12 15:41:44.133141: Total combined rows from sheets: 84
+2025-11-12 15:41:44.135480: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:41:44.212946: Loaded 1827 category rules.
+2025-11-12 15:41:44.419478: Excel file updated with 140 total rows.
+2025-11-12 15:41:44.436272: Weekly totals calculated
+2025-11-12 15:41:44.487241: Weekly Totals sheet created
+2025-11-12 15:41:44.487753: Script completed successfully.
+2025-11-12 15:43:22.460960: Script started
+2025-11-12 15:43:22.462552: Opening spreadsheet: Budget 2026
+2025-11-12 15:43:24.560930: Loaded 26 rows from NFCU
+2025-11-12 15:43:24.990513: Loaded 45 rows from Chase
+2025-11-12 15:43:25.349056: Loaded 13 rows from USAA
+2025-11-12 15:43:25.355068: Total combined rows from sheets: 84
+2025-11-12 15:43:25.356188: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:43:25.459391: Loaded 1827 category rules.
+2025-11-12 15:43:25.674624: Excel file updated with 140 total rows.
+2025-11-12 15:43:25.691877: Weekly totals calculated
+2025-11-12 15:43:25.743789: Weekly Totals sheet created
+2025-11-12 15:43:25.744201: Script completed successfully.
+2025-11-12 15:43:47.540427: Script started
+2025-11-12 15:43:47.542125: Opening spreadsheet: Budget 2026
+2025-11-12 15:43:49.353055: Loaded 26 rows from NFCU
+2025-11-12 15:43:49.715272: Loaded 45 rows from Chase
+2025-11-12 15:43:50.113115: Loaded 13 rows from USAA
+2025-11-12 15:43:50.124766: Total combined rows from sheets: 84
+2025-11-12 15:43:50.126738: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:43:50.220855: Loaded 1827 category rules.
+2025-11-12 15:43:50.463002: Excel file updated with 140 total rows.
+2025-11-12 15:43:50.481012: Weekly totals calculated
+2025-11-12 15:43:50.532975: Weekly Totals sheet created
+2025-11-12 15:43:50.533381: Script completed successfully.
+2025-11-12 15:45:08.899258: Script started
+2025-11-12 15:45:08.900982: Opening spreadsheet: Budget 2026
+2025-11-12 15:45:10.537793: Loaded 26 rows from NFCU
+2025-11-12 15:45:10.896991: Loaded 45 rows from Chase
+2025-11-12 15:45:11.242832: Loaded 13 rows from USAA
+2025-11-12 15:45:11.257553: Total combined rows from sheets: 84
+2025-11-12 15:45:11.259798: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:45:11.321608: Loaded 1827 category rules.
+2025-11-12 15:45:11.530831: Excel file updated with 140 total rows.
+2025-11-12 15:45:11.548166: Weekly totals calculated
+2025-11-12 15:45:11.600208: Weekly Totals sheet created
+2025-11-12 15:45:11.600645: Script completed successfully.
+2025-11-12 15:46:37.966739: Script started
+2025-11-12 15:46:37.968618: Opening spreadsheet: Budget 2026
+2025-11-12 15:46:39.663772: Loaded 26 rows from NFCU
+2025-11-12 15:46:40.016163: Loaded 45 rows from Chase
+2025-11-12 15:46:40.349415: Loaded 13 rows from USAA
+2025-11-12 15:46:40.363890: Total combined rows from sheets: 84
+2025-11-12 15:46:40.365392: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:46:40.455143: Loaded 1827 category rules.
+2025-11-12 15:46:40.716054: Excel file updated with 155 total rows.
+2025-11-12 15:46:40.734777: Weekly totals calculated
+2025-11-12 15:46:40.788787: Weekly Totals sheet created
+2025-11-12 15:46:40.789233: Script completed successfully.
+2025-11-12 15:48:04.589973: Script started
+2025-11-12 15:48:04.591787: Opening spreadsheet: Budget 2026
+2025-11-12 15:48:06.950714: Loaded 26 rows from NFCU
+2025-11-12 15:48:07.296449: Loaded 45 rows from Chase
+2025-11-12 15:48:07.627097: Loaded 13 rows from USAA
+2025-11-12 15:48:07.629916: Total combined rows from sheets: 84
+2025-11-12 15:48:07.630388: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:48:07.668993: Loaded 1827 category rules.
+2025-11-12 15:48:07.903838: Excel file updated with 155 total rows.
+2025-11-12 15:48:07.922453: Weekly totals calculated
+2025-11-12 15:48:07.976508: Weekly Totals sheet created
+2025-11-12 15:48:07.976977: Script completed successfully.
+2025-11-12 15:49:59.781163: Script started
+2025-11-12 15:49:59.782909: Opening spreadsheet: Budget 2026
+2025-11-12 15:50:01.482750: Loaded 26 rows from NFCU
+2025-11-12 15:50:01.824914: Loaded 45 rows from Chase
+2025-11-12 15:50:02.201737: Loaded 13 rows from USAA
+2025-11-12 15:50:02.204929: Total combined rows from sheets: 84
+2025-11-12 15:50:02.205571: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Category', 'Currency']
+2025-11-12 15:50:02.262279: Loaded 1827 category rules.
+2025-11-12 15:50:02.505910: Excel file updated with 155 total rows.
+2025-11-12 15:50:02.524556: Weekly totals calculated
+2025-11-12 15:50:02.584200: Weekly Totals sheet created
+2025-11-12 15:50:02.584675: Script completed successfully.
+2025-11-12 15:53:43.332844: Script started
+2025-11-12 15:53:43.334615: Opening spreadsheet: Budget 2026
+2025-11-12 15:53:45.419254: Loaded 26 rows from NFCU
+2025-11-12 15:53:45.769472: Loaded 45 rows from Chase
+2025-11-12 15:53:46.116017: Loaded 13 rows from USAA
+2025-11-12 15:53:46.127776: Total combined rows from sheets: 84
+2025-11-12 15:53:46.129960: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Currency']
+2025-11-12 15:53:46.205182: Loaded 1827 category rules.
+2025-11-12 15:53:46.473317: Excel file updated with 237 total rows.
+2025-11-12 15:53:46.499262: Weekly totals calculated
+2025-11-12 15:53:46.566824: Weekly Totals sheet created
+2025-11-12 15:53:46.567221: Script completed successfully.
+2025-11-12 16:36:59.099090: Script started
+2025-11-12 16:36:59.101437: Opening spreadsheet: Budget 2026
+2025-11-12 16:37:02.414955: Loaded 26 rows from NFCU
+2025-11-12 16:37:02.902324: Loaded 45 rows from Chase
+2025-11-12 16:37:03.392225: Loaded 13 rows from USAA
+2025-11-12 16:37:03.403641: Total combined rows from sheets: 84
+2025-11-12 16:37:03.405654: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'SourceSheet', 'Currency']
+2025-11-12 16:37:03.477622: Loaded 1827 category rules.
+2025-11-12 16:37:03.791704: Excel file updated with 237 total rows.
+2025-11-12 16:37:03.816466: Weekly totals calculated
+2025-11-12 16:37:03.886307: Weekly Totals sheet created
+2025-11-12 16:37:03.886717: Script completed successfully.
+2025-11-12 16:42:58.391348: Script started
+2025-11-12 16:42:58.393010: Opening spreadsheet: Budget 2026
+2025-11-12 16:43:01.260505: Loaded 26 rows from NFCU
+2025-11-12 16:43:01.877802: Loaded 50 rows from Chase
+2025-11-12 16:43:02.478955: Loaded 13 rows from USAA
+2025-11-12 16:43:02.485331: Total combined rows from sheets: 89
+2025-11-12 16:43:02.487514: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet', 'Transaction ID']
+2025-11-12 16:43:02.546492: Loaded 1827 category rules.
+2025-11-12 16:43:02.598306: Excel file updated with 1 total rows.
+2025-11-12 16:43:02.603923: Weekly totals calculated
+2025-11-12 16:43:02.632172: Weekly Totals sheet created
+2025-11-12 16:43:02.632834: Script completed successfully.
+2025-11-12 16:43:53.192621: Script started
+2025-11-12 16:43:53.194140: Opening spreadsheet: Budget 2026
+2025-11-12 16:43:55.492654: Loaded 26 rows from NFCU
+2025-11-12 16:43:56.132930: Loaded 50 rows from Chase
+2025-11-12 16:43:56.765633: Loaded 5 rows from USAA
+2025-11-12 16:43:56.767565: Total combined rows from sheets: 81
+2025-11-12 16:43:56.768156: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet', 'Transaction ID']
+2025-11-12 16:43:56.823872: Loaded 1827 category rules.
+2025-11-12 16:43:56.858035: Excel file updated with 2 total rows.
+2025-11-12 16:43:56.863568: Weekly totals calculated
+2025-11-12 16:43:56.893639: Weekly Totals sheet created
+2025-11-12 16:43:56.894074: Script completed successfully.
+2025-11-12 16:46:23.887952: Script started
+2025-11-12 16:46:23.889514: Opening spreadsheet: Budget 2026
+2025-11-12 16:46:26.425430: Loaded 26 rows from NFCU
+2025-11-12 16:46:26.927247: Loaded 50 rows from Chase
+2025-11-12 16:46:27.362741: Loaded 5 rows from USAA
+2025-11-12 16:46:27.369337: Total combined rows from sheets: 81
+2025-11-12 16:46:27.370787: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet', 'Transaction ID']
+2025-11-12 16:46:27.502722: Loaded 1827 category rules.
+2025-11-12 16:46:27.511519: Total rows after removing duplicates: 83
+2025-11-12 16:46:27.609522: Excel file updated with 83 total rows.
+2025-11-12 16:46:27.619775: Script failed with error: unsupported operand type(s) for +: 'float' and 'str'
+2025-11-12 19:26:52.459396: Script started
+2025-11-12 19:26:52.462402: Opening spreadsheet: Budget 2026
+2025-11-12 19:26:55.051098: Loaded 26 rows from NFCU
+2025-11-12 19:26:55.399732: Loaded 50 rows from Chase
+2025-11-12 19:26:55.748384: Loaded 5 rows from USAA
+2025-11-12 19:26:55.759075: Total combined rows from sheets: 81
+2025-11-12 19:26:55.761172: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet', 'Transaction ID']
+2025-11-12 19:26:55.884612: Loaded 1827 category rules.
+2025-11-12 19:26:55.915126: Total rows after removing duplicates: 164
+2025-11-12 19:26:56.242725: Excel file updated with 164 total rows.
+2025-11-12 19:26:56.257574: Script failed with error: unsupported operand type(s) for +: 'float' and 'str'
+2025-11-12 19:28:16.819760: Script started
+2025-11-12 19:28:16.821498: Opening spreadsheet: Budget 2026
+2025-11-12 19:28:19.233752: Loaded 26 rows from NFCU
+2025-11-12 19:28:19.874025: Loaded 50 rows from Chase
+2025-11-12 19:28:20.209712: Loaded 5 rows from USAA
+2025-11-12 19:28:20.212556: Total combined rows from sheets: 81
+2025-11-12 19:28:20.213794: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:28:20.268491: Loaded 1827 category rules.
+2025-11-12 19:28:20.369038: Excel file updated with 81 total rows.
+2025-11-12 19:28:20.380442: Weekly totals calculated
+2025-11-12 19:28:20.429827: Weekly Totals sheet created
+2025-11-12 19:28:20.430377: Script completed successfully.
+2025-11-12 19:31:08.948708: Script started
+2025-11-12 19:31:08.950486: Opening spreadsheet: Budget 2026
+2025-11-12 19:31:12.641686: Loaded 26 rows from NFCU
+2025-11-12 19:31:13.007203: Loaded 50 rows from Chase
+2025-11-12 19:31:13.341553: Loaded 5 rows from USAA
+2025-11-12 19:31:13.350287: Total combined rows from sheets: 81
+2025-11-12 19:31:13.357473: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:31:13.454877: Loaded 1827 category rules.
+2025-11-12 19:31:13.642371: Excel file updated with 81 total rows.
+2025-11-12 19:31:13.663797: Weekly totals calculated
+2025-11-12 19:31:13.718234: Weekly Totals sheet created
+2025-11-12 19:31:13.718678: Script completed successfully.
+2025-11-12 19:32:04.566956: Script started
+2025-11-12 19:32:04.568650: Opening spreadsheet: Budget 2026
+2025-11-12 19:32:06.835333: Loaded 26 rows from NFCU
+2025-11-12 19:32:07.226302: Loaded 50 rows from Chase
+2025-11-12 19:32:07.620283: Loaded 5 rows from USAA
+2025-11-12 19:32:07.622185: Total combined rows from sheets: 81
+2025-11-12 19:32:07.623266: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:32:07.817756: Loaded 1827 category rules.
+2025-11-12 19:32:07.915428: Excel file updated with 81 total rows.
+2025-11-12 19:32:07.915887: Script completed successfully.
+2025-11-12 19:33:23.963773: Script started
+2025-11-12 19:33:23.965597: Opening spreadsheet: Budget 2026
+2025-11-12 19:33:26.353015: Loaded 26 rows from NFCU
+2025-11-12 19:33:26.800721: Loaded 50 rows from Chase
+2025-11-12 19:33:27.251865: Loaded 5 rows from USAA
+2025-11-12 19:33:27.253664: Total combined rows from sheets: 81
+2025-11-12 19:33:27.254541: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:33:27.449138: Loaded 1827 category rules.
+2025-11-12 19:33:27.547256: Excel file updated with 81 total rows.
+2025-11-12 19:33:27.547724: Script completed successfully.
+2025-11-12 19:34:51.508479: Script started
+2025-11-12 19:34:51.510253: Opening spreadsheet: Budget 2026
+2025-11-12 19:34:53.845747: Loaded 26 rows from NFCU
+2025-11-12 19:34:54.293818: Loaded 50 rows from Chase
+2025-11-12 19:34:54.750100: Loaded 5 rows from USAA
+2025-11-12 19:34:54.755625: Total combined rows from sheets: 81
+2025-11-12 19:34:54.756258: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:34:54.954081: Loaded 1827 category rules.
+2025-11-12 19:34:55.051823: Excel file updated with 81 total rows.
+2025-11-12 19:34:55.052291: Script completed successfully.
+2025-11-12 19:36:52.194913: Script started
+2025-11-12 19:36:52.196606: Opening spreadsheet: Budget 2026
+2025-11-12 19:36:54.812153: Loaded 26 rows from NFCU
+2025-11-12 19:36:55.237304: Loaded 50 rows from Chase
+2025-11-12 19:36:55.685236: Loaded 5 rows from USAA
+2025-11-12 19:36:55.693471: Total combined rows from sheets: 81
+2025-11-12 19:36:55.696719: Columns after concatenation: ['Account', 'Date', 'Description', 'Merchant', 'Sub Category', 'Amount', 'Pending', 'Transaction Id', 'SourceSheet']
+2025-11-12 19:36:55.890741: Loaded 1827 category rules.
+2025-11-12 19:36:55.987240: Excel file updated with 81 total rows.
+2025-11-12 19:36:55.987734: Script completed successfully.
