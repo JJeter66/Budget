@@ -4,7 +4,7 @@ from rapidfuzz import process, fuzz
 import datetime
 
 # -------------------------
-# File paths (relative to app.py)
+# File paths
 # -------------------------
 EXCEL_FILE = "budget_export.xlsx"
 CATEGORY_FILE = "categories.xlsx"
@@ -15,7 +15,6 @@ CATEGORY_FILE = "categories.xlsx"
 @st.cache_data
 def load_data():
     df = pd.read_excel(EXCEL_FILE)
-    # Ensure Description exists
     if 'Description' not in df.columns:
         df['Description'] = "No Description"
     else:
@@ -54,7 +53,7 @@ def assign_category(description, categories_df):
     return "Uncategorized"
 
 # -------------------------
-# Main Streamlit app
+# Main app
 # -------------------------
 st.title("📊 Interactive Budget Dashboard")
 
@@ -65,22 +64,49 @@ categories_df = load_categories()
 # Apply categories
 df['Category'] = df['Description'].apply(lambda x: assign_category(x, categories_df))
 
-# Sidebar filter by month
+# Convert Date column
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-df['Month'] = df['Date'].dt.to_period('M')
-months = df['Month'].dropna().unique()
+
+# -------------------------
+# Compute week ranges (Sunday → Saturday)
+# -------------------------
+df['Week_Start'] = df['Date'] - pd.to_timedelta((df['Date'].dt.weekday + 1) % 7, unit='d')
+df['Week_Start'] = df['Week_Start'].dt.date
+df['Week_Range'] = df['Week_Start'].apply(lambda ws: f"{ws} → {ws + pd.Timedelta(days=6)}")
+
+# Get unique week options
+all_weeks = df[['Week_Start', 'Week_Range']].drop_duplicates().sort_values('Week_Start')
+week_options = all_weeks['Week_Range'].tolist()
+week_start_mapping = dict(zip(all_weeks['Week_Range'], all_weeks['Week_Start']))
+
+# -------------------------
+# Sidebar filters
+# -------------------------
+# Month filter (optional, can keep or remove if using all-weeks slider)
+months = df['Date'].dt.to_period('M').dropna().unique()
 selected_month = st.sidebar.selectbox("Select Month", sorted(months))
 
-filtered_df = df[df['Month'] == selected_month]
+# Filter by month first
+month_filtered_df = df[df['Date'].dt.to_period('M') == selected_month]
 
-# Show budget table
-st.subheader(f"Transactions for {selected_month}")
+# Week slider (snaps to week starts)
+selected_week_range = st.sidebar.select_slider(
+    "Select Week (Sun → Sat)",
+    options=[wr for wr in month_filtered_df['Week_Range'].sort_values().unique()],
+    value=month_filtered_df['Week_Range'].sort_values().iloc[-1]  # default to last week
+)
+
+start_date = week_start_mapping[selected_week_range]
+filtered_df = month_filtered_df[month_filtered_df['Week_Start'] == start_date]
+
+# -------------------------
+# Display
+# -------------------------
+st.subheader(f"Transactions for {selected_month} | Week: {selected_week_range}")
 st.dataframe(filtered_df)
 
-# Total spent for the month
 st.write(f"**Total Spent:** ${filtered_df['Amount'].sum():,.2f}")
 
-# Show breakdown by category
 category_totals = filtered_df.groupby('Category')['Amount'].sum().reset_index()
 st.subheader("Spending by Category")
 st.dataframe(category_totals)
