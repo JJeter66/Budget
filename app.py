@@ -9,114 +9,68 @@ EXCEL_FILE = "C:/Users/jjete/OneDrive/1. Life Stuff/Budget/Bank Data Export/budg
 SHEET_NAME = "Quicklook"
 
 # -------------------------
-# Load Quicklook with styles
+# Helper function to extract data and colors
+# -------------------------
+def extract_range(ws, start_row, end_row, start_col, end_col):
+    data = []
+    colors = []
+    for r in range(start_row, end_row + 1):
+        row_data = []
+        row_colors = []
+        for c in range(start_col, end_col + 1):
+            cell = ws.cell(row=r, column=c)
+            row_data.append(cell.value)
+            
+            # Handle cell fill color
+            fill = cell.fill.start_color
+            if fill and fill.type == "rgb" and fill.rgb is not None:
+                hex_color = f"#{fill.rgb[-6:]}"  # Extract RRGGBB
+            else:
+                hex_color = "#FFFFFF"
+            row_colors.append(hex_color)
+        data.append(row_data)
+        colors.append(row_colors)
+    return pd.DataFrame(data), colors
+
+# -------------------------
+# Load Quicklook sheet with styles
 # -------------------------
 @st.cache_data
 def load_quicklook_with_styles():
     wb = load_workbook(EXCEL_FILE, data_only=True)
     ws = wb[SHEET_NAME]
 
-    def extract_range(start_row, end_row, start_col, end_col):
-        values = []
-        colors = []
-        for r in range(start_row, end_row + 1):
-            row_values = []
-            row_colors = []
-            for c in range(start_col, end_col + 1):
-                cell = ws.cell(row=r, column=c)
-                row_values.append(cell.value)
-                fill = cell.fill.start_color.rgb
-                row_colors.append(f"#{fill[-6:]}" if fill else "#FFFFFF")
-            values.append(row_values)
-            colors.append(row_colors)
-        df = pd.DataFrame(values)
-        df_colors = pd.DataFrame(colors)
-        return df, df_colors
+    # Extract ranges
+    df_top, df_top_colors = extract_range(ws, 1, 4, 1, 6)    # Rows 1-4, cols A-F
+    df_mid, df_mid_colors = extract_range(ws, 5, 18, 1, 4)   # Rows 5-18, cols A-D
+    df_bot, df_bot_colors = extract_range(ws, 19, 19, 1, 3)  # Row 19, cols A-C
+    e18_value = ws.cell(row=18, column=5).value              # E18
 
-    df_top, df_top_colors = extract_range(1, 4, 1, 6)
-    df_middle, df_middle_colors = extract_range(5, 18, 1, 4)
-    df_bottom, df_bottom_colors = extract_range(19, 19, 1, 3)
-    e18_value = ws.cell(row=18, column=5).value
-
-    return (df_top, df_top_colors,
-            df_middle, df_middle_colors,
-            df_bottom, df_bottom_colors,
-            e18_value)
+    return df_top, df_top_colors, df_mid, df_mid_colors, df_bot, df_bot_colors, e18_value
 
 # -------------------------
-# Combine sections
+# Display Quicklook in Streamlit
 # -------------------------
-def combine_quicklook(df_top, df_middle, df_bottom):
-    df_middle_padded = pd.concat([df_middle, pd.DataFrame("", index=df_middle.index, columns=range(4,6))], axis=1)
-    df_bottom_padded = pd.concat([df_bottom, pd.DataFrame("", index=df_bottom.index, columns=range(3,6))], axis=1)
-    df_combined = pd.concat([df_top, df_middle_padded, df_bottom_padded], ignore_index=True)
-    return df_combined
+st.set_page_config(page_title="📊 Budget Dashboard", layout="wide")
+st.title("📊 Interactive Budget Dashboard")
 
-def combine_colors(df_top_colors, df_middle_colors, df_bottom_colors):
-    df_middle_colors_padded = pd.concat([df_middle_colors, pd.DataFrame("#FFFFFF", index=df_middle_colors.index, columns=range(4,6))], axis=1)
-    df_bottom_colors_padded = pd.concat([df_bottom_colors, pd.DataFrame("#FFFFFF", index=df_bottom_colors.index, columns=range(3,6))], axis=1)
-    df_combined_colors = pd.concat([df_top_colors, df_middle_colors_padded, df_bottom_colors_padded], ignore_index=True)
-    return df_combined_colors
+df_top, df_top_colors, df_mid, df_mid_colors, df_bot, df_bot_colors, e18_value = load_quicklook_with_styles()
 
-# -------------------------
-# Hide repeated values to simulate merged cells
-# -------------------------
-def hide_repeats(df):
-    df_hide = df.copy()
-    for col in df_hide.columns:
-        previous = None
-        for i in range(len(df_hide)):
-            if df_hide.iloc[i, col] == previous:
-                df_hide.iloc[i, col] = ""
-            else:
-                previous = df_hide.iloc[i, col]
-    return df_hide
+# Function to display styled DataFrame
+def styled_df(df, colors):
+    def color_cells(val, color_row):
+        return [f'background-color: {c}; text-align: center;' if isinstance(v, (int, float)) else f'background-color: {c};' 
+                for v, c in zip(val, color_row)]
+    return df.style.apply(lambda row: color_cells(row, colors[row.name]), axis=1)
 
-# -------------------------
-# Style DataFrame with colors, bold headers, center numbers
-# -------------------------
-def style_dataframe(df, color_df):
-    df_hide = hide_repeats(df)
+st.subheader("Top Section (Rows 1-4)")
+st.dataframe(styled_df(df_top, df_top_colors), use_container_width=True)
 
-    def align_cells(val):
-        if isinstance(val, (int, float)):
-            return "text-align: center;"
-        return "text-align: left;"
+st.subheader("Middle Section (Rows 5-18)")
+st.dataframe(styled_df(df_mid, df_mid_colors), use_container_width=True)
 
-    # Bold the first row of each section
-    def bold_rows(row_index):
-        if row_index in [0, 4, 18]:  # top section, middle section start, bottom row
-            return ["font-weight: bold;"] * len(df_hide.columns)
-        return [""] * len(df_hide.columns)
-
-    styled = (df_hide.style
-              .apply(lambda x: color_df.iloc[x.name], axis=1)
-              .applymap(align_cells)
-              .apply(lambda x: bold_rows(x.name), axis=1)
-              .set_table_styles([
-                  {'selector': 'tbody tr:nth-child(4n+4)', 'props': [('border-bottom', '2px solid #000')]}  # optional separator
-              ])
-             )
-    return styled
-
-# -------------------------
-# Load data
-# -------------------------
-(df_top, df_top_colors,
- df_middle, df_middle_colors,
- df_bottom, df_bottom_colors,
- e18_value) = load_quicklook_with_styles()
-
-df_combined = combine_quicklook(df_top, df_middle, df_bottom)
-color_combined = combine_colors(df_top_colors, df_middle_colors, df_bottom_colors)
-
-# -------------------------
-# Streamlit display
-# -------------------------
-st.set_page_config(page_title="📊 Quicklook Budget Summary", layout="wide")
-st.title("📊 Quicklook Budget Summary")
-
-st.dataframe(style_dataframe(df_combined, color_combined), use_container_width=True)
+st.subheader("Bottom Section (Row 19)")
+st.dataframe(styled_df(df_bot, df_bot_colors), use_container_width=True)
 
 st.subheader("E18 Value")
 st.write(e18_value)
