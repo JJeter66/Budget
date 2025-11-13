@@ -1,112 +1,122 @@
 import streamlit as st
 import pandas as pd
-from rapidfuzz import process, fuzz
-import datetime
+from openpyxl import load_workbook
 
 # -------------------------
 # File paths
 # -------------------------
-EXCEL_FILE = "budget_export.xlsx"
-CATEGORY_FILE = "categories.xlsx"
+EXCEL_FILE = "C:/Users/jjete/OneDrive/1. Life Stuff/Budget/Bank Data Export/budget_export.xlsm"
+SHEET_NAME = "Quicklook"
 
 # -------------------------
-# Load Excel data
+# Load Quicklook with styles
 # -------------------------
 @st.cache_data
-def load_data():
-    df = pd.read_excel(EXCEL_FILE)
-    if 'Description' not in df.columns:
-        df['Description'] = "No Description"
-    else:
-        df['Description'] = df['Description'].fillna('No Description')
-    return df
+def load_quicklook_with_styles():
+    wb = load_workbook(EXCEL_FILE, data_only=True)
+    ws = wb[SHEET_NAME]
+
+    def extract_range(start_row, end_row, start_col, end_col):
+        values = []
+        colors = []
+        for r in range(start_row, end_row + 1):
+            row_values = []
+            row_colors = []
+            for c in range(start_col, end_col + 1):
+                cell = ws.cell(row=r, column=c)
+                row_values.append(cell.value)
+                fill = cell.fill.start_color.rgb
+                row_colors.append(f"#{fill[-6:]}" if fill else "#FFFFFF")
+            values.append(row_values)
+            colors.append(row_colors)
+        df = pd.DataFrame(values)
+        df_colors = pd.DataFrame(colors)
+        return df, df_colors
+
+    df_top, df_top_colors = extract_range(1, 4, 1, 6)
+    df_middle, df_middle_colors = extract_range(5, 18, 1, 4)
+    df_bottom, df_bottom_colors = extract_range(19, 19, 1, 3)
+    e18_value = ws.cell(row=18, column=5).value
+
+    return (df_top, df_top_colors,
+            df_middle, df_middle_colors,
+            df_bottom, df_bottom_colors,
+            e18_value)
 
 # -------------------------
-# Load categories
+# Combine sections
 # -------------------------
-@st.cache_data
-def load_categories():
-    if CATEGORY_FILE:
-        categories = pd.read_excel(CATEGORY_FILE, usecols=[0,1], header=None)
-        categories.columns = ['Keyword', 'Category']
-        categories['Keyword'] = categories['Keyword'].astype(str).str.strip().str.lower()
-        categories['Category'] = categories['Category'].astype(str).str.strip()
-        return categories
-    else:
-        return pd.DataFrame(columns=['Keyword', 'Category'])
+def combine_quicklook(df_top, df_middle, df_bottom):
+    df_middle_padded = pd.concat([df_middle, pd.DataFrame("", index=df_middle.index, columns=range(4,6))], axis=1)
+    df_bottom_padded = pd.concat([df_bottom, pd.DataFrame("", index=df_bottom.index, columns=range(3,6))], axis=1)
+    df_combined = pd.concat([df_top, df_middle_padded, df_bottom_padded], ignore_index=True)
+    return df_combined
+
+def combine_colors(df_top_colors, df_middle_colors, df_bottom_colors):
+    df_middle_colors_padded = pd.concat([df_middle_colors, pd.DataFrame("#FFFFFF", index=df_middle_colors.index, columns=range(4,6))], axis=1)
+    df_bottom_colors_padded = pd.concat([df_bottom_colors, pd.DataFrame("#FFFFFF", index=df_bottom_colors.index, columns=range(3,6))], axis=1)
+    df_combined_colors = pd.concat([df_top_colors, df_middle_colors_padded, df_bottom_colors_padded], ignore_index=True)
+    return df_combined_colors
 
 # -------------------------
-# Assign category
+# Hide repeated values to simulate merged cells
 # -------------------------
-def assign_category(description, categories_df):
-    keywords = categories_df['Keyword'].tolist()
-    desc = str(description).strip().lower()
-    for i, keyword in enumerate(keywords):
-        if keyword in desc:
-            return categories_df.loc[i, 'Category']
-    if keywords:
-        result = process.extractOne(desc, keywords, scorer=fuzz.partial_ratio)
-        if result:
-            match_keyword, score, idx = result
-            if score >= 75:
-                return categories_df.loc[idx, 'Category']
-    return "Uncategorized"
+def hide_repeats(df):
+    df_hide = df.copy()
+    for col in df_hide.columns:
+        previous = None
+        for i in range(len(df_hide)):
+            if df_hide.iloc[i, col] == previous:
+                df_hide.iloc[i, col] = ""
+            else:
+                previous = df_hide.iloc[i, col]
+    return df_hide
 
 # -------------------------
-# Main app
+# Style DataFrame with colors, bold headers, center numbers
 # -------------------------
-st.title("📊 Interactive Budget Dashboard")
+def style_dataframe(df, color_df):
+    df_hide = hide_repeats(df)
 
+    def align_cells(val):
+        if isinstance(val, (int, float)):
+            return "text-align: center;"
+        return "text-align: left;"
+
+    # Bold the first row of each section
+    def bold_rows(row_index):
+        if row_index in [0, 4, 18]:  # top section, middle section start, bottom row
+            return ["font-weight: bold;"] * len(df_hide.columns)
+        return [""] * len(df_hide.columns)
+
+    styled = (df_hide.style
+              .apply(lambda x: color_df.iloc[x.name], axis=1)
+              .applymap(align_cells)
+              .apply(lambda x: bold_rows(x.name), axis=1)
+              .set_table_styles([
+                  {'selector': 'tbody tr:nth-child(4n+4)', 'props': [('border-bottom', '2px solid #000')]}  # optional separator
+              ])
+             )
+    return styled
+
+# -------------------------
 # Load data
-df = load_data()
-categories_df = load_categories()
+# -------------------------
+(df_top, df_top_colors,
+ df_middle, df_middle_colors,
+ df_bottom, df_bottom_colors,
+ e18_value) = load_quicklook_with_styles()
 
-# Apply categories
-df['Category'] = df['Description'].apply(lambda x: assign_category(x, categories_df))
-
-# Convert Date column
-df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+df_combined = combine_quicklook(df_top, df_middle, df_bottom)
+color_combined = combine_colors(df_top_colors, df_middle_colors, df_bottom_colors)
 
 # -------------------------
-# Compute week ranges (Sunday → Saturday)
+# Streamlit display
 # -------------------------
-df['Week_Start'] = df['Date'] - pd.to_timedelta((df['Date'].dt.weekday + 1) % 7, unit='d')
-df['Week_Start'] = df['Week_Start'].dt.date
-df['Week_Range'] = df['Week_Start'].apply(lambda ws: f"{ws} → {ws + pd.Timedelta(days=6)}")
+st.set_page_config(page_title="📊 Quicklook Budget Summary", layout="wide")
+st.title("📊 Quicklook Budget Summary")
 
-# Get unique week options
-all_weeks = df[['Week_Start', 'Week_Range']].drop_duplicates().sort_values('Week_Start')
-week_options = all_weeks['Week_Range'].tolist()
-week_start_mapping = dict(zip(all_weeks['Week_Range'], all_weeks['Week_Start']))
+st.dataframe(style_dataframe(df_combined, color_combined), use_container_width=True)
 
-# -------------------------
-# Sidebar filters
-# -------------------------
-# Month filter (optional, can keep or remove if using all-weeks slider)
-months = df['Date'].dt.to_period('M').dropna().unique()
-selected_month = st.sidebar.selectbox("Select Month", sorted(months))
-
-# Filter by month first
-month_filtered_df = df[df['Date'].dt.to_period('M') == selected_month]
-
-# Week slider (snaps to week starts)
-selected_week_range = st.sidebar.select_slider(
-    "Select Week (Sun → Sat)",
-    options=[wr for wr in month_filtered_df['Week_Range'].sort_values().unique()],
-    value=month_filtered_df['Week_Range'].sort_values().iloc[-1]  # default to last week
-)
-
-start_date = week_start_mapping[selected_week_range]
-filtered_df = month_filtered_df[month_filtered_df['Week_Start'] == start_date]
-
-# -------------------------
-# Display
-# -------------------------
-st.subheader(f"Transactions for {selected_month} | Week: {selected_week_range}")
-st.dataframe(filtered_df)
-
-st.write(f"**Total Spent:** ${filtered_df['Amount'].sum():,.2f}")
-
-category_totals = filtered_df.groupby('Category')['Amount'].sum().reset_index()
-st.subheader("Spending by Category")
-st.dataframe(category_totals)
+st.subheader("E18 Value")
+st.write(e18_value)
